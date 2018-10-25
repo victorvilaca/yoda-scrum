@@ -32,23 +32,16 @@ h1.title {
 label {
   color: #edb800 !important;
 }
-@media only screen and (min-width: 320px) {
-	.timer .timer-digit {
-		font-family: 'Digital-7 Mono';
-		font-size: 72px;
-		color: #edb800;
-	}
-}
-@media only screen and (min-width: 992px) {
-	.timer .timer-digit {
-		font-family: 'Digital-7 Mono';
-		font-size: 200px;
-		color: #edb800;
-	}
-}
 
 .timeout.timer span {
   color: red;
+}
+
+.yoda-div {
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  margin-left: -100px;
 }
 
 .quotes  {
@@ -78,6 +71,27 @@ label {
 .flex-wrapper > * {
   padding: 5px;
   flex: 1 100%;
+}
+
+
+@media only screen and (min-width: 320px) {
+	.timer .timer-digit {
+		font-family: 'Digital-7 Mono';
+		font-size: 72px;
+		color: #edb800;
+	}
+}
+@media only screen and (min-width: 992px) {
+	.timer .timer-digit {
+		font-family: 'Digital-7 Mono';
+		font-size: 200px;
+		color: #edb800;
+  }
+    
+  .yoda-div {
+    left: 80%;
+    margin-left: 0px;
+  }
 }
 
 @font-face {

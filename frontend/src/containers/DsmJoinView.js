@@ -1,9 +1,10 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { Form, Button, Input } from 'antd';
 import { join } from '../actions';
 import { Redirect } from 'react-router-dom';
 import Yoda from '../components/char/Yoda';
+import "./DsmJoinView.css";
 
 class DsmJoinView extends React.Component {
 
@@ -15,9 +16,9 @@ class DsmJoinView extends React.Component {
 		this.handleJoin = this.handleJoin.bind(this);
 		this.handleUser = this.handleUser.bind(this);
 	}
-	
+
 	handleJoin() {
-		const {name} = this.state;
+		const { name } = this.state;
 		if (name && name !== "") {
 			this.props.join(name);
 			localStorage.setItem('username', name);
@@ -27,7 +28,7 @@ class DsmJoinView extends React.Component {
 	handleUser() {
 		const username = localStorage.getItem('username');
 		if (username) {
-			this.setState({name: username});
+			this.setState({ name: username });
 		}
 	}
 
@@ -47,8 +48,8 @@ class DsmJoinView extends React.Component {
 						<h1 className="title">Yoda DSM</h1>
 					</div>
 					<Form>
-						<Form.Item label="Name">
-							<Input value={name} onChange={e => this.setState({name: e.target.value})}></Input>
+						<Form.Item label="What is your name?" colon={false}>
+							<Input className="input" value={name} onChange={e => this.setState({ name: e.target.value })}></Input>
 						</Form.Item>
 						<Form.Item>
 							<Button type="primary" onClick={this.handleJoin}>Join DSM</Button>
